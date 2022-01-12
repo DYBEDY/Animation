@@ -30,10 +30,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       applyAnimation()
+        animationButton.setTitle("START", for: .normal)
         
+        animationView.animation = "pop"
+        animationView.curve = "easeIn"
+        animationView.force = CGFloat(animationOfView.numberOfForce)
+        animationView.duration = CGFloat(animationOfView.numberOfDuration)
+        animationView.delay = CGFloat(animationOfView.numberOfDelay)
+        
+        animationLabel.text = animationView.animation
+        curveLabel.text = animationView.curve
+        forceLabel.text = String(format: "%.1f", Double(animationView.force))
+        durationLabel.text = String(format: "%.1f", Double(animationView.duration))
+        delayLabel.text = String(format: "%.1f", Double(animationView.delay))
+        
+        animationView.animate()
     }
-
+    
     @IBAction func runAnimateButton(_ sender: UIButton) {
         applyAnimation()
     }
