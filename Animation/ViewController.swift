@@ -30,11 +30,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        animationLabel.text = "pop"
-        curveLabel.text = "easeInOut"
-        forceLabel.text = String(2)
-        durationLabel.text = String(1)
-        delayLabel.text = String(0.3)
+       applyAnimation()
         
     }
 
@@ -44,6 +40,7 @@ class ViewController: UIViewController {
     
     func applyAnimation() {
         animationButton.setTitle(animationOfView.nameOfAnimation, for: .normal)
+        
         animationView.animation = animationOfView.nameOfAnimation
         animationView.curve = animationOfView.nameOfCurve
         animationView.force = CGFloat(animationOfView.numberOfForce)
@@ -58,5 +55,7 @@ class ViewController: UIViewController {
         
         animationView.animate()
         animationOfView = Animation.getAnimation()
+        
+        animationButton.setTitle(animationOfView.nameOfAnimation, for: .normal)
     }
 }
