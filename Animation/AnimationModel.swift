@@ -5,7 +5,7 @@
 //  Created by Roman on 12.01.2022.
 //
 
-import Spring
+import Foundation
 
 struct Animation {
     var nameOfAnimation: String
